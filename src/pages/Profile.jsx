@@ -28,7 +28,7 @@ export default function ProfilePage() {
   const auth = getAuth(); // Get the authentication service
   const db = getFirestore(); // Initialize Firestore
   const [editMode, setEditMode] = useState(true);
-  const [isBookSeller, setIsBookSeller] = useState(false);
+  const [isPaidProjectDev, setisPaidProjectDev] = useState(false);
   const [registerAsSeller, setRegisterAsSeller] = useState('no');
   const [state, setState] = useState("");
   const [headingErrorText, setHeadingErrorText] = useState(false);
@@ -36,34 +36,20 @@ export default function ProfilePage() {
     fullName: '',
     email: '',
     mobile: '',
-    addressFirstLine: '',
-    addressSecondLine: '',
-    streetName: '',
-    landmark: '',
-    district: '',
-    city: '',
-    state: '',
     bankAccountNo: '',
     bankIFSCCode: '',
     upiID: '',
     upiMobileNumber: ''
   });
 
-  const requiredFieldsNonBookSeller = [
+  const requiredFieldsNonPaidProjectDev = [
     'fullName',
     'email',
     'mobile',
-    'addressFirstLine',
-    'addressSecondLine',
-    'streetName',
-    'landmark',
-    'district',
-    'city',
-    'state'
   ];
 
-  const requiredFieldsBookSeller = [
-    ...requiredFieldsNonBookSeller,
+  const requiredFieldsPaidProjectDev = [
+    ...requiredFieldsNonPaidProjectDev,
     'bankAccountNo',
     'bankIFSCCode'
   ];
@@ -80,13 +66,6 @@ export default function ProfilePage() {
           fullName: userData.name || '',
           email: userData.email || '',
           mobile: userData.mobile || '',
-          addressFirstLine: userData.addressFirstLine || '',
-          addressSecondLine: userData.addressSecondLine || '',
-          streetName: userData.streetName || '',
-          landmark: userData.landmark || '',
-          district: userData.district || '',
-          city: userData.city || '',
-          state: userData.state || '',
           bankAccountNo: userData.bankAccountNo || '',
           bankIFSCCode: userData.bankIFSCCode.toUpperCase() || '',
           upiID: userData.upiId || '',
@@ -101,7 +80,7 @@ export default function ProfilePage() {
   };
 
   useEffect(() => {
-    if (isBookSeller && requiredFieldsBookSeller.some(field => formData[field].trim() === '')) {
+    if (isPaidProjectDev && requiredFieldsPaidProjectDev.some(field => formData[field].trim() === '')) {
       setHeadingErrorText(true);
       return;
     }
@@ -109,7 +88,7 @@ export default function ProfilePage() {
       setHeadingErrorText(false);
     }
 
-    if (!isBookSeller && requiredFieldsNonBookSeller.some(field => formData[field].trim() === '')) {
+    if (!isPaidProjectDev && requiredFieldsNonPaidProjectDev.some(field => formData[field].trim() === '')) {
       setHeadingErrorText(true);
       return;
     }
@@ -169,7 +148,7 @@ export default function ProfilePage() {
     if (editMode) {
       const value = e.target.value;
       setRegisterAsSeller(value);
-      setIsBookSeller(value === 'yes');
+      setisPaidProjectDev(value === 'yes');
     }
   };
 
@@ -179,12 +158,12 @@ export default function ProfilePage() {
 
     // ------------------------------------------------------------------------------------------------------------
 
-    if (editMode && isBookSeller && requiredFieldsBookSeller.some(field => formData[field].trim() === '')) {
+    if (editMode && isPaidProjectDev && requiredFieldsPaidProjectDev.some(field => formData[field].trim() === '')) {
       toast.error('Please fill in all required fields.');
       return;
     }
 
-    if (editMode && !isBookSeller && requiredFieldsNonBookSeller.some(field => formData[field].trim() === '')) {
+    if (editMode && !isPaidProjectDev && requiredFieldsNonPaidProjectDev.some(field => formData[field].trim() === '')) {
       toast.error('Please fill in all required fields.');
       return;
     }
@@ -206,17 +185,17 @@ export default function ProfilePage() {
       return;
     }
 
-    if (isBookSeller && !bankAccountRegex.test(formData.bankAccountNo)) {
+    if (isPaidProjectDev && !bankAccountRegex.test(formData.bankAccountNo)) {
       toast.error('Please enter a valid bank account number.');
       return;
     }
 
-    if (isBookSeller && !ifscRegex.test(formData.bankIFSCCode)) {
+    if (isPaidProjectDev && !ifscRegex.test(formData.bankIFSCCode)) {
       toast.error('Please enter a valid IFSC code.');
       return;
     }
 
-    if (isBookSeller && formData.upiMobileNumber.trim() !== '' && !upimobileRegex.test(formData.upiMobileNumber)) {
+    if (isPaidProjectDev && formData.upiMobileNumber.trim() !== '' && !upimobileRegex.test(formData.upiMobileNumber)) {
       toast.error('Please enter a valid UPI mobile number.');
       return;
     }
@@ -229,18 +208,11 @@ export default function ProfilePage() {
         name: formData.fullName,
         email: formData.email,
         mobile: formData.mobile,
-        addressFirstLine: formData.addressFirstLine,
-        addressSecondLine: formData.addressSecondLine,
-        streetName: formData.streetName,
-        landmark: formData.landmark,
-        district: formData.district,
-        city: formData.city,
-        state: formData.state,
         bankAccountNo: formData.bankAccountNo,
         bankIFSCCode: formData.bankIFSCCode.toUpperCase(),
         upiId: formData.upiID,
         upiMobileNumber: formData.upiMobileNumber,
-        isBookSeller: isBookSeller,
+        isPaidProjectDev: isPaidProjectDev,
       });
       // Show success message
       toast.success('Profile updated successfully!');
@@ -289,35 +261,13 @@ export default function ProfilePage() {
           </MDBCol>
         </MDBRow>
 
-        {/* <div>
-          <label>
-            Register As a Book Seller:
-            <input
-              type="radio"
-              value="yes"
-              checked={registerAsSeller === 'yes'}
-              onChange={handleRadioChange}
-            />
-            Yes
-          </label>
-          <label>
-            <input
-              type="radio"
-              value="no"
-              checked={registerAsSeller === 'no'}
-              onChange={handleRadioChange}
-            />
-            No
-          </label>
-        </div> */}
-
-        <Form.Label>Do you want to Register as Book Seller?</Form.Label>
+        <Form.Label>Do you want to take up Paid Projects ?</Form.Label>
         <div>
           <div className={`custom-radio ${!editMode ? 'disabled' : ''}`}>
             <input
               type="radio"
               value="yes"
-              checked={isBookSeller}
+              checked={isPaidProjectDev}
               onChange={handleRadioChange}
               id="yes"
             />
@@ -327,7 +277,7 @@ export default function ProfilePage() {
             <input
               type="radio"
               value="no"
-              checked={!isBookSeller}
+              checked={!isPaidProjectDev}
               onChange={handleRadioChange}
               id="no"
             />
@@ -403,153 +353,10 @@ export default function ProfilePage() {
                   </MDBCol>
                 </MDBRow>
                 <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Address First Line</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBInput
-                      type="text"
-                      name="addressFirstLine"
 
-                      value={formData.addressFirstLine}
-                      onChange={handleChange}
-                      disabled={!editMode}
-                      required={editMode}
-                    />
+                {/* FOR PAID PROJECT DEVS ONLY STARTS*/}
 
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Address Second Line</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBInput
-                      type="text"
-                      name="addressSecondLine"
-
-                      value={formData.addressSecondLine}
-                      onChange={handleChange}
-                      disabled={!editMode}
-                      required={editMode}
-                    />
-
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Street Name</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBInput
-                      type="text"
-                      name="streetName"
-
-                      value={formData.streetName}
-                      onChange={handleChange}
-                      disabled={!editMode}
-                      required={editMode}
-                    />
-
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Landmark (optional)</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBInput
-                      type="text"
-                      name="landmark"
-
-                      value={formData.landmark}
-                      onChange={handleChange}
-                      disabled={!editMode}
-
-                    />
-
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>District</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBInput
-                      type="text"
-                      name="district"
-
-                      value={formData.district}
-                      onChange={handleChange}
-                      disabled={!editMode}
-                      required={editMode}
-                    />
-
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>City</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBInput
-                      type="text"
-                      name="city"
-
-                      value={formData.city}
-                      onChange={handleChange}
-                      disabled={!editMode}
-                      required={editMode}
-                    />
-
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>State</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    {/* {editMode ? (
-                      <Form.Group className="mb-3" controlId="formAddressState">
-                        <Form.Select onChange={(e) => setState(e.target.value)} required value={state}>
-                          {stateOptions.map((option, index) => (
-                            <option key={index} value={option}>{option || 'Select State'}</option>
-                          ))}
-                        </Form.Select>
-                      </Form.Group>
-                    ) : (
-                      <MDBInput
-                        type="text"
-                        name="state"
-                        value={state}
-                        onChange={handleChange}
-                        disabled={!editMode}
-                        required={editMode}
-                      />
-                    )} */}
-                    <MDBInput
-                      type="text"
-                      name="state"
-
-                      value={formData.state}
-                      onChange={handleChange}
-                      disabled={!editMode}
-                      required={editMode}
-                    />
-                  </MDBCol>
-                </MDBRow>
-
-
-                {/* FOR BOOK SELLERS ONLY STARTS*/}
-
-                {isBookSeller && (
+                {isPaidProjectDev && (
                   <>
                     <hr />
                     <MDBRow>
@@ -564,7 +371,7 @@ export default function ProfilePage() {
                           value={formData.bankAccountNo}
                           onChange={handleChange}
                           disabled={!editMode}
-                          required={editMode && isBookSeller}
+                          required={editMode && isPaidProjectDev}
                         />
 
                       </MDBCol>
@@ -582,7 +389,7 @@ export default function ProfilePage() {
                           value={formData.bankIFSCCode.toUpperCase()}
                           onChange={handleChange}
                           disabled={!editMode}
-                          required={editMode && isBookSeller}
+                          required={editMode && isPaidProjectDev}
                         />
 
                       </MDBCol>
@@ -624,7 +431,7 @@ export default function ProfilePage() {
                       </MDBCol>
                     </MDBRow>
 
-                    {/* FOR BOOK SELLERS ONLY ENDS*/}
+                    {/* FOR PAID PROJECTS ONLY ONLY ENDS*/}
 
                   </>
                 )}
