@@ -1,0 +1,41 @@
+.logout-button {
+    text-decoration: none;
+    /* Remove text underline */
+    color: #6c757d;
+
+}
+
+.logout-icon {
+    margin-right: 5px;
+
+}
+
+.logout-text {
+    color: #6c757d;
+
+}
+
+.logout-button:hover .logout-icon,
+.logout-button:hover .logout-text {
+    color: #343536;
+    /* Change text and icon color on hover */
+}
+
+.custom-radio {
+    display: inline-block;
+    margin-right: 20px;
+    /* Add some space between radio buttons */
+}
+
+.custom-radio input[type="radio"] {
+    margin-right: 8px;
+}
+
+.custom-radio label {
+    cursor: pointer;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
