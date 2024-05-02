@@ -31,6 +31,8 @@ Let's collaborate and bring this vision to life!`}
         days={1}
         people={3}
         points={250}
+        money={500}
+        languages={["JavaScript", "React", "CSS"]}
       />
     </Fragment>
   );
