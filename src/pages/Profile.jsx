@@ -32,6 +32,9 @@ export default function ProfilePage() {
   const [registerAsSeller, setRegisterAsSeller] = useState('no');
   const [state, setState] = useState("");
   const [headingErrorText, setHeadingErrorText] = useState(false);
+  const [aboutMe, setAboutMe] = useState('');
+  const [pastProjects, setPastProjects] = useState('');
+  const [resumeLink, setResumeLink] = useState('');
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -39,13 +42,19 @@ export default function ProfilePage() {
     bankAccountNo: '',
     bankIFSCCode: '',
     upiID: '',
-    upiMobileNumber: ''
+    upiMobileNumber: '',
+    aboutMe: '',
+    resumeLink: '',
+    pastProjects: '',
   });
 
   const requiredFieldsNonPaidProjectDev = [
     'fullName',
     'email',
     'mobile',
+    'aboutMe',
+    'resumeLink',
+    'pastProjects',
   ];
 
   const requiredFieldsPaidProjectDev = [
@@ -69,7 +78,11 @@ export default function ProfilePage() {
           bankAccountNo: userData.bankAccountNo || '',
           bankIFSCCode: userData.bankIFSCCode.toUpperCase() || '',
           upiID: userData.upiId || '',
-          upiMobileNumber: userData.upiMobileNumber || ''
+          upiMobileNumber: userData.upiMobileNumber || '',
+          aboutMe: userData.aboutMe || '',
+          pastProjects: userData.pastProjects || '',
+          resumeLink: userData.resumeLink || '',
+
         });
       } else {
         toast.error('No such document!');
@@ -213,6 +226,9 @@ export default function ProfilePage() {
         upiId: formData.upiID,
         upiMobileNumber: formData.upiMobileNumber,
         isPaidProjectDev: isPaidProjectDev,
+        aboutMe: aboutMe,
+        pastProjects: pastProjects,
+        resumeLink: resumeLink,
       });
       // Show success message
       toast.success('Profile updated successfully!');
@@ -305,6 +321,7 @@ export default function ProfilePage() {
                       onChange={handleChange}
                       disabled={!editMode}
                       required={editMode}
+                      maxLength={150}
                     />
 
                   </MDBCol>
@@ -353,6 +370,60 @@ export default function ProfilePage() {
                   </MDBCol>
                 </MDBRow>
                 <hr />
+
+                <MDBRow>
+                  <MDBCol sm="3">
+                    <MDBCardText>About me</MDBCardText>
+                  </MDBCol>
+                  <MDBCol sm="9">
+                    <textarea
+                      name="aboutMe"
+                      value={formData.aboutMe}
+                      onChange={handleChange}
+                      disabled={!editMode}
+                      required={editMode}
+                      className="form-control"
+                      style={{ height: "8rem" }}
+                      maxLength={1500}
+                    />
+                  </MDBCol>
+                </MDBRow>
+                <hr />
+                <MDBRow>
+                  <MDBCol sm="3">
+                    <MDBCardText>Past Projects and Achievements</MDBCardText>
+                  </MDBCol>
+                  <MDBCol sm="9">
+                    <textarea
+                      name="pastProjects"
+                      value={formData.pastProjects}
+                      onChange={handleChange}
+                      disabled={!editMode}
+                      required={editMode}
+                      className="form-control"
+                      style={{ height: "8rem" }}
+                      maxLength={1500}
+                    />
+                  </MDBCol>
+                </MDBRow>
+                <hr />
+                <MDBRow>
+                  <MDBCol sm="3">
+                    <MDBCardText>Google Drive Link to your Resume</MDBCardText>
+                  </MDBCol>
+                  <MDBCol sm="9">
+                    <input
+                      type="text"
+                      name="resumeLink"
+                      value={formData.resumeLink}
+                      onChange={handleChange}
+                      disabled={!editMode}
+                      required={editMode}
+                      className="form-control"
+                      maxLength={150}
+                    />
+                  </MDBCol>
+                </MDBRow>
 
                 {/* FOR PAID PROJECT DEVS ONLY STARTS*/}
 
