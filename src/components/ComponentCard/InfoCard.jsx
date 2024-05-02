@@ -25,17 +25,24 @@ export default function InfoCard({
   const paragraphs = content.split("\n");
   const displayContent = showMore ? content : paragraphs.slice(0, 2).join("\n");
 
-  const style = {
-    display: "inline-block",
-    padding: "5px 5px",
-    fontSize: "16px",
-    lineHeight: "20px",
-    borderRadius: "25px",
-    backgroundColor: "#808080", // Gray color
-    color: "#333",
-    boxShadow: "0px 0px 10px #888888", // Shadow border
+  const listItemStyle = {
+    marginBottom: "5px",
+    paddingLeft: "1.5em",
+    position: "relative",
+    listStyleType: "none", // Add this line
   };
 
+  const bulletStyle = {
+    content: '""', // Change to an empty string
+    display: "inline-block",
+    width: "0.6em",
+    height: "0.6em",
+    borderRadius: "50%",
+    backgroundColor: "#007bff",
+    position: "absolute",
+    left: "0.3em",
+    top: "0.5em",
+  };
   return (
     <div
       style={{
@@ -61,10 +68,14 @@ export default function InfoCard({
         sx={{ maxWidth: 786 }}
       >
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            style={{ fontWeight: "700" }}
+            gutterBottom
+            variant="h5"
+            component="div"
+          >
             {title}
           </Typography>
-
           <div style={{ marginTop: "5px" }}>
             {/* <Chip label="Small" label="Min" size="small" />
             <span>points</span> */}
@@ -83,12 +94,34 @@ export default function InfoCard({
               {points}
             </div>
           </div>
-
           <div style={{ marginTop: "8px" }}>
             <Typography variant="body2" color="text.secondary">
               {displayContent}
             </Typography>
-          </div>
+          </div>{" "}
+          {showMore && (
+            <div style={{ margin: "5px" }}>
+              <div style={{ fontWeight: "600", fontSize: "18px" }}>
+                Product Details
+              </div>
+              <div>
+                <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
+                  <li style={listItemStyle}>
+                    <span style={bulletStyle}></span>
+                    one
+                  </li>
+                  <li style={listItemStyle}>
+                    <span style={bulletStyle}></span>
+                    two
+                  </li>
+                  <li style={listItemStyle}>
+                    <span style={bulletStyle}></span>
+                    three
+                  </li>
+                </ul>
+              </div>
+            </div>
+          )}
           {showMore && (
             <CardActions>
               {languages.map((language) => (
@@ -101,7 +134,6 @@ export default function InfoCard({
               ))}
             </CardActions>
           )}
-
           <div
             style={{
               display: "flex",
@@ -154,12 +186,25 @@ export default function InfoCard({
             </Button>
           </div>
         </CardContent>
+
         {showMore && (
-          <CardActions>
-            <Button variant="contained" color="primary" style={{ flex: 1 }}>
+          <CardActions
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center,",
+              justifyContent: "center",
+            }}
+          >
+            {" "}
+            <Button
+              variant="contained"
+              color="primary"
+              style={{ width: "40%" }}
+            >
               Apply
             </Button>
-            <Button variant="contained" color="error" style={{ flex: 1 }}>
+            <Button variant="contained" color="error" style={{ width: "40%" }}>
               Reject
             </Button>
           </CardActions>

@@ -103,12 +103,19 @@ export default function ModeratorInfoCard({
             </Link>
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button variant="contained" color="primary" style={{ flex: 1 }}>
-            Accept
+        <CardActions
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center,",
+            justifyContent: "center",
+          }}
+        >
+          {" "}
+          <Button variant="contained" color="primary" style={{ width: "40%" }}>
+            Apply
           </Button>
-
-          <Button variant="contained" color="error" style={{ flex: 1 }}>
+          <Button variant="contained" color="error" style={{ width: "40%" }}>
             Reject
           </Button>
         </CardActions>

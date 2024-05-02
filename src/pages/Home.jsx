@@ -22,7 +22,7 @@ const Home = () => {
       <LearnFundamentals />
       <LearnReact />
       <FAQSection />
-      {/* <InfoCard
+      <InfoCard
         title="Building an Ecommerce store for a Fashion Company"
         content={`Seeking skilled Video Editors for a project inspired by Alex Hormozi's dynamic style. Edit engaging 60-second videos, infusing creativity while staying true to the distinctive aesthetic. Ideal opportunity for experienced editors or emerging talents to contribute to a unique and impactful series.
 
@@ -49,7 +49,7 @@ Credentials:
 - Bachelor's degree in Computer Science from ABC University.
 - Certified JavaScript Developer from the XYZ Institute.
 - Winner of the 123 Coding Challenge in 2020.`}
-      /> */}
+      />
     </Fragment>
   );
 };
