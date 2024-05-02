@@ -30,7 +30,7 @@ import nonFiction02 from "../Images/non-fiction-02.png";
 import nonFiction03 from "../Images/non-fiction-03.jpg";
 import nonFiction04 from "../Images/non-fiction-04.jpg";
 
-import home1Img from "../Images/home-01.png";
+import home1Img from "../Images/Ultimate platform.png";
 import home2Img from "../Images/home-02.png";
 import home3Img from "../Images/Online connection-rafiki.svg";
 import home4Img from "../Images/Passionate-rafiki.png";
@@ -39,25 +39,25 @@ export const SliderData = [
   {
     id: 1,
     title: "Best place to find free  and paid projects for programming",
-    desc: "Experience the best pricing and learning path .",
+    desc: "Experience the best pricing with client satisfaction. Clients get full satisfaction and avoid going through hassale of checking if their requirements have actually been met",
     cover: home1Img,
   },
   {
     id: 2,
     title: "Buy services at Affordable Rates",
-    desc: "Best place to buy budget friendly and affordable IT services for clients",
+    desc: "Best place to buy budget friendly and affordable IT services for clients. Clients don't have to police their requirements as we make sure that all the requirements of the client are met",
     cover: home2Img,
   },
   {
     id: 3,
     title: "Best place to list and sell your services",
-    desc: "Upskill and also earning with your skills",
+    desc: "Upskill and also earning with your skills. Make contacts and also grow your skills as a programmer ",
     cover: home3Img,
   },
   {
     id: 4,
     title: "Massive learning opportunity for students",
-    desc: "Get Massive learning opportunity for students who aspire to become coder/programmers ",
+    desc: "Get Massive learning opportunity for students who aspire to become coder/programmers but seem to think that other platforms are too overwhelming ",
     cover: home4Img,
   },
 ];
