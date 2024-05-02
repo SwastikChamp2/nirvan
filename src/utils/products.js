@@ -20,7 +20,6 @@ import fiction04 from "../Images/fiction-04.jpg";
 import fiction05 from "../Images/fiction-05.jpg";
 import fiction06 from "../Images/fiction-06.jpg";
 
-
 import comic01 from "../Images/comic-01.jpg";
 import comic02 from "../Images/comic-02.jpg";
 import comic03 from "../Images/comic-03.png";
@@ -33,59 +32,60 @@ import nonFiction04 from "../Images/non-fiction-04.jpg";
 
 import home1Img from "../Images/home-01.png";
 import home2Img from "../Images/home-02.png";
-import home3Img from "../Images/home-03.png";
-import home4Img from "../Images/home-04.png";
+import home3Img from "../Images/Online connection-rafiki.svg";
+import home4Img from "../Images/Passionate-rafiki.png";
 
 export const SliderData = [
   {
     id: 1,
-    title: "Best Place to Buy and Sell Books",
-    desc: "Seeling and Buy Used Books have never been simpler than this",
+    title: "Best place to find free  and paid projects for programming",
+    desc: "Experience the best pricing and learning path .",
     cover: home1Img,
   },
   {
     id: 2,
-    title: "Buy Books at Affordable Rates",
-    desc: "Best place to buy budget friendly and affordable books right from the comfort of your home",
+    title: "Buy services at Affordable Rates",
+    desc: "Best place to buy budget friendly and affordable IT services for clients",
     cover: home2Img,
   },
   {
     id: 3,
-    title: "Best place to list and sell your old books",
-    desc: "Get rid of your old books and also make money doing that !",
+    title: "Best place to list and sell your services",
+    desc: "Upskill and also earning with your skills",
     cover: home3Img,
   },
   {
     id: 4,
-    title: "Massive Discounts on Popular Books",
-    desc: "Get Discounts upto 50% on some of the most popular books",
+    title: "Massive learning opportunity for students",
+    desc: "Get Massive learning opportunity for students who aspire to become coder/programmers ",
     cover: home4Img,
   },
 ];
 
 export const serviceData = [
   {
-    icon: <ion-icon name="car"></ion-icon>,
-    title: "Shipping Service",
-    subtitle: "We provide shipping services to deliver books right to your doorstep",
+    icon: <ion-icon name="cash-outline"></ion-icon>,
+    title: "Find Paid projects",
+    subtitle: "Find project with incentives to complete",
     bg: "#fdefe6",
   },
   {
-    icon: <ion-icon name="card"></ion-icon>,
-    title: "Safe Payment",
-    subtitle: "100% Safe and Secure Payment Method on Every Transaction",
+    icon: <ion-icon name="car"></ion-icon>,
+
+    title: "Wide range of projects",
+    subtitle: "100% Safe and worthwhile projects",
     bg: "#ceebe9",
   },
   {
-    icon: <ion-icon name="bicycle-outline"></ion-icon>,
-    title: "Self Pickup Option",
-    subtitle: "Option to pick your books yourself to save cost on delivery charges",
+    icon: <ion-icon name="people-outline"></ion-icon>,
+    title: "Collaborate",
+    subtitle: "Option to work with people from diverse ranges ",
     bg: "#e2f2b2",
   },
   {
     icon: <ion-icon name="wallet-outline"></ion-icon>,
     title: "Budget Freindly",
-    subtitle: "Buy Books at Affordable and Budget Friendly Rates",
+    subtitle: "Avail services  at Affordable  Rates",
     bg: "#d6e5fb",
   },
 ];
@@ -231,8 +231,7 @@ export const discoutProducts = [
     ],
     avgRating: 4.8,
   },
-
-]
+];
 
 export const products = [
   {
@@ -847,5 +846,4 @@ export const products = [
     ],
     avgRating: 4.8,
   },
-
 ];

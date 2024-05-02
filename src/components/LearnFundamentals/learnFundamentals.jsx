@@ -1,7 +1,10 @@
 import React from "react";
 import fimage from "../../Images/Fundamentals.svg";
+import { useNavigate } from "react-router-dom";
 
 const LearnFundamentals = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="learn" className="p-5">
       <div className="container">
@@ -10,19 +13,25 @@ const LearnFundamentals = () => {
             <img src={fimage} alt="" className="img-fluid" />
           </div>
           <div className="col-md p-5">
-            <h2>Learn the fundamentals</h2>
+            <h2>Learn the Fundamentals</h2>
             <p className="lead">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-              in sed voluptatibus quae dolore laboriosam!
+              Lay a solid foundation for your programming journey with our
+              comprehensive projects.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ex
-              sunt ad dolorem sapiente ducimus quibusdam quaerat officiis
-              delectus dignissimos libero quam ipsum quia quidem culpa, dicta,
-              repellendus assumenda inventore.
+              Whether you're a beginner looking to kickstart your career or an
+              experienced developer seeking to solidify your skills, our
+              platform offers a wide range of courses and gigs focused on
+              fundamental programming concepts. People can post their requests
+              or requirements, while sellers can easily get started without any
+              any cost at their end.
             </p>
-            <a href="#" className="btn mt-3">
-              <i className="bi bi-chevron-right"></i> Learn More
+            <a
+              href="#"
+              className="btn btn-primary mt-3"
+              onClick={() => navigate("/login")}
+            >
+              <i className="bi bi-chevron-right"></i> Explore Projects
             </a>
           </div>
         </div>
