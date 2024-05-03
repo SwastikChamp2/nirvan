@@ -12,12 +12,12 @@ import Signup from "./components/AuthComponents/Signup";
 import { useHistory } from "react-router-dom";
 import Forgotpassword from "./components/AuthComponents/Forgotpassword";
 import Checkout from "./pages/Checkout";
-import TestComponent from "./pages/TestComponent";
+
 import AcceptedProjects from "./pages/DashBoard/AcceptedProjects";
 import OngoingProjects from "./pages/DashBoard/OngoingProjects";
 
 const Home = lazy(() => import("./pages/Home"));
-const TestPage = lazy(() => import("./pages/TestComponent"));
+
 
 const Projects = lazy(() => import("./pages/Projects"));
 const Cart = lazy(() => import("./pages/Cart"));

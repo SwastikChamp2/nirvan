@@ -2,8 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import FilterSelect from "../components/FilterSelect";
 import SearchBar from "../components/SeachBar/SearchBar";
 import { Fragment, useState } from "react";
-import { products } from "../utils/products";
-import ShopList from "../components/ShopList";
+import ShopList from "../components/ProjectList";
 import Banner from "../components/Banner/Banner";
 import useWindowScrollToTop from "../hooks/useWindowScrollToTop";
 
