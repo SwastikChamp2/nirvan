@@ -67,20 +67,12 @@ function Signup() {
                             email: email,
                             password: password, // Empty string in case of Google Sign In
                             name: name, // Empty string in case of Google Sign In
-                            mobile: mobile, // Empty string in case of Google Sign In
-                            addressFirstLine: '',
-                            addressSecondLine: '',
-                            streetName: '',
-                            landmark: '',
-                            district: '',
-                            city: '',
-                            state: '',
+                            mobile: mobile, // Empty string in case of Google Sign In    
                             bankAccountNo: '',
                             bankIFSCCode: '',
                             upiID: '',
                             upiMobileNumber: '',
-                            isBookSeller: false,
-                            cart: {},
+                            userPoints: 0,
                         });
                     })
                     .catch((error) => {

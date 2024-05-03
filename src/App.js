@@ -17,7 +17,7 @@ import TestComponent from "./pages/TestComponent";
 const Home = lazy(() => import("./pages/Home"));
 const TestPage = lazy(() => import("./pages/TestComponent"));
 
-const Shop = lazy(() => import("./pages/Shop"));
+const Projects = lazy(() => import("./pages/Projects"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Product = lazy(() => import("./pages/Product"));
 const Signin = lazy(() => import("./components/AuthComponents/Login"));
@@ -44,7 +44,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/test" element={<TestComponent />} />
 
-          <Route path="/shop" element={<Shop />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/shop/:id" element={<Product />} />
           <Route path="/my-projects" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />

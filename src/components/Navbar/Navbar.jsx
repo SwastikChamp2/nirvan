@@ -104,10 +104,10 @@ const NavBar = () => {
               <Link
                 aria-label="Go to Shop Page"
                 className="navbar-link"
-                to="/shop"
+                to="/projects"
                 onClick={() => setExpand(false)}
               >
-                <span className="nav-link-label">Shop</span>
+                <span className="nav-link-label">Projects</span>
               </Link>
             </Nav.Item>
 
@@ -118,7 +118,7 @@ const NavBar = () => {
                 to="/listing"
                 onClick={() => setExpand(false)}
               >
-                <span className="nav-link-label">Sell</span>
+                <span className="nav-link-label">Listing</span>
               </Link>
             </Nav.Item>
 

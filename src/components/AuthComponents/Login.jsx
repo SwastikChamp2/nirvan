@@ -78,19 +78,12 @@ function Signin() {
                                 password: '', // Empty string in case of Google Sign In
                                 name: '', // Empty string in case of Google Sign In
                                 mobile: '',
-                                addressFirstLine: '',
-                                addressSecondLine: '',
-                                streetName: '',
-                                landmark: '',
-                                district: '',
-                                city: '',
-                                state: '',
                                 bankAccountNo: '',
                                 bankIFSCCode: '',
                                 upiID: '',
                                 upiMobileNumber: '',
-                                cart: {},
-                                isBookSeller: false,
+                                userPoints: 0,
+
                             });
                         }
                     })

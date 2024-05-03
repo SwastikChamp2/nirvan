@@ -11,6 +11,8 @@ import { getFirestore } from 'firebase/firestore';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import Loader from '../components/Loader/Loader';
+import { techStackOptions } from '../components/Listing/Listing';
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 
 
 
@@ -27,14 +29,15 @@ import {
 export default function ProfilePage() {
   const auth = getAuth(); // Get the authentication service
   const db = getFirestore(); // Initialize Firestore
-  const [editMode, setEditMode] = useState(true);
+  const [editMode, setEditMode] = useState(false);
   const [isPaidProjectDev, setisPaidProjectDev] = useState(false);
   const [registerAsSeller, setRegisterAsSeller] = useState('no');
   const [state, setState] = useState("");
   const [headingErrorText, setHeadingErrorText] = useState(false);
   const [aboutMe, setAboutMe] = useState('');
-  const [pastProjects, setPastProjects] = useState('');
-  const [resumeLink, setResumeLink] = useState('');
+  const [techStack, setTechStack] = useState([]); // Tech stack options selected in edit mode
+  const [userTechStack, setUserTechStack] = useState([]); // Tech stack options from Firestore
+  const [showTechStack, setShowTechStack] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -46,6 +49,7 @@ export default function ProfilePage() {
     aboutMe: '',
     resumeLink: '',
     pastProjects: '',
+    userPoints: '',
   });
 
   const requiredFieldsNonPaidProjectDev = [
@@ -71,6 +75,7 @@ export default function ProfilePage() {
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         const userData = docSnap.data();
+        setUserTechStack(userData.techStack || []);
         setFormData({
           fullName: userData.name || '',
           email: userData.email || '',
@@ -82,6 +87,8 @@ export default function ProfilePage() {
           aboutMe: userData.aboutMe || '',
           pastProjects: userData.pastProjects || '',
           resumeLink: userData.resumeLink || '',
+          userPoints: userData.userPoints || '',
+
 
         });
       } else {
@@ -116,6 +123,7 @@ export default function ProfilePage() {
       if (user) {
         // Fetch user data from Firestore
         fetchData(user);
+        handleRadioChange();
       } else {
         // Redirect to login page if user is not authenticated
         navigate('/login');
@@ -125,6 +133,7 @@ export default function ProfilePage() {
     // Clean up the subscription
     return () => unsubscribe();
   }, [auth, navigate]);
+
 
   if (!formData.email) {
     return <Loader />;
@@ -226,9 +235,12 @@ export default function ProfilePage() {
         upiId: formData.upiID,
         upiMobileNumber: formData.upiMobileNumber,
         isPaidProjectDev: isPaidProjectDev,
-        aboutMe: aboutMe,
-        pastProjects: pastProjects,
-        resumeLink: resumeLink,
+        aboutMe: formData.aboutMe,
+        pastProjects: formData.pastProjects,
+        resumeLink: formData.resumeLink,
+        userPoints: formData.userPoints,
+        techStack,
+
       });
       // Show success message
       toast.success('Profile updated successfully!');
@@ -326,7 +338,9 @@ export default function ProfilePage() {
 
                   </MDBCol>
                 </MDBRow>
+
                 <hr />
+
                 <MDBRow>
                   <MDBCol sm="3">
                     <MDBCardText>Email</MDBCardText>
@@ -344,6 +358,28 @@ export default function ProfilePage() {
 
                   </MDBCol>
                 </MDBRow>
+
+                <hr />
+
+                <MDBRow>
+                  <MDBCol sm="3">
+                    <MDBCardText>Points</MDBCardText>
+                  </MDBCol>
+                  <MDBCol sm="9">
+                    <MDBInput
+                      type="Number"
+                      name="userPoints"
+
+                      value={formData.userPoints}
+                      onChange={handleChange}
+                      disabled={true}
+                      required={editMode}
+                    />
+
+                  </MDBCol>
+                </MDBRow>
+
+
                 <hr />
                 <MDBRow>
                   <MDBCol sm="3">
@@ -386,6 +422,71 @@ export default function ProfilePage() {
                       style={{ height: "8rem" }}
                       maxLength={1500}
                     />
+                  </MDBCol>
+                </MDBRow>
+                <hr />
+
+                <MDBRow>
+                  <MDBCol sm="3">
+                    <MDBCardText>Tech Stack</MDBCardText>
+                  </MDBCol>
+                  <MDBCol sm="9">
+                    {/* Show tech stack section when in edit mode */}
+                    {editMode && (
+                      <div>
+                        <Form.Group className="mb-3" controlId="formBasicTechStack">
+                          <Form.Label>Choose Tech Stack:</Form.Label>
+                          <div>
+                            <button
+                              className="show-hide-tech-stack"
+                              onClick={() => setShowTechStack(!showTechStack)}
+                            >
+                              {showTechStack ? "Hide Tech Stack" : "Show Tech Stack"}
+                              <div style={{ marginRight: "8px" }}></div>
+                              {showTechStack ? (
+                                <BsChevronUp className="toggle-icon" />
+                              ) : (
+                                <BsChevronDown className="toggle-icon" />
+                              )}
+
+                            </button>
+                            {showTechStack && (
+                              <div className="tech-stack-options-container">
+                                <div className="tech-stack-options">
+                                  {techStackOptions.map((option) => (
+                                    <Form.Check
+                                      key={option}
+                                      type="checkbox"
+                                      id={`checkbox-${option}`}
+                                      label={option}
+                                      value={option}
+                                      checked={techStack.includes(option)}
+                                      onChange={(e) => {
+                                        const checkedOptions = e.target.checked
+                                          ? [...techStack, option]
+                                          : techStack.filter((item) => item !== option);
+                                        setTechStack(checkedOptions);
+                                      }}
+                                    />
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </Form.Group>
+                      </div>
+                    )}
+
+                    {/* Show user tech stack as chips when not in edit mode */}
+                    {!editMode && (
+                      <div className="user-tech-stack-chips">
+                        {userTechStack.map((option) => (
+                          <span key={option} className="tech-stack-chip">
+                            {option}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </MDBCol>
                 </MDBRow>
                 <hr />

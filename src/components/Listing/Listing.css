@@ -66,3 +66,28 @@
     background-color: #0c2a4d;
     /* Darker color on hover/focus */
 }
+
+.show-hide-tech-stack {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-icon {
+    margin-right: 5px;
+}
+
+.tech-stack-options-container {
+    max-height: 200px;
+    /* Adjust the height as needed */
+    overflow-y: auto;
+}
+
+.tech-stack-options {
+    display: flex;
+    flex-direction: column;
+}
