@@ -43,6 +43,7 @@ const Listing = () => {
   const auth = getAuth(); // Get the authentication service
   const db = getFirestore(); // Initialize Firestore
   const [projectName, setProjectName] = useState("");
+  const [projectPoints, setProjectPoints] = useState('');
   const [postedBy, setPostedBy] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
   const [projectBudget, setProjectBudget] = useState("");
@@ -112,6 +113,7 @@ const Listing = () => {
       // Store all the input data in the "ProjectListing" collection
       await setDoc(doc(db, "ProjectListing", documentId), {
         projectName: trimmedProjectName,
+        projectPoints,
         postedBy,
         projectDescription,
         projectBudget,
@@ -172,6 +174,8 @@ const Listing = () => {
             />
           </Form.Group>
 
+          <div style={{ marginBottom: "10px" }}></div>
+
           <Form.Group className="mb-3" controlId="formBasicProjectDescription">
             <Form.Label>Project Description: <span className="required-indicator">*</span></Form.Label>
             <Form.Control
@@ -183,10 +187,6 @@ const Listing = () => {
             />
           </Form.Group>
 
-          <Form.Group controlId="formBasicPostedBy">
-            <Form.Label>Posted By:</Form.Label>
-            <Form.Control type="email" value={postedBy} disabled />
-          </Form.Group>
 
           {/* Project Tickets Field */}
           <Form.Group controlId="formBasicProjectTickets">
@@ -208,6 +208,7 @@ const Listing = () => {
             </Button>
           </Form.Group>
 
+          <div style={{ marginBottom: "10px" }}></div>
           <Form.Group className="mb-3 small-input" controlId="formBasicProjectBudget">
             <Form.Label>Project Budget (in Rs): <span className="required-indicator">*</span></Form.Label>
 
@@ -220,6 +221,19 @@ const Listing = () => {
             {budgetError && <p className="text-danger">{budgetError}</p>}
 
           </Form.Group>
+
+
+          {/* <Form.Group controlId="projectPoints">
+            <Form.Label>Project Points</Form.Label>
+            <Form.Control
+              type="number"
+              placeholder="Enter project points"
+              value={projectPoints}
+              onChange={(e) => setProjectPoints(e.target.value)}
+            />
+          </Form.Group>
+
+          <div style={{ marginBottom: "10px" }}></div> */}
 
           <div>
             <Form.Group className="mb-3" controlId="formBasicTechStack">

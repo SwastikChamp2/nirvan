@@ -16,9 +16,12 @@ export default function InfoCard({
   content,
   days,
   people,
+  minpoints,
   points,
   money,
   languages,
+  projectTickets,
+
 }) {
   const [showMore, setShowMore] = useState(false);
 
@@ -65,7 +68,7 @@ export default function InfoCard({
           boxShadow: "0px 0px 10px #888888", // Shadow border
           backgroundColor: "rgba(255, 255, 255, 0.8)", // Set background color to white with 80% opacity
         }}
-        sx={{ maxWidth: 786 }}
+        sx={{ width: 786 }}
       >
         <CardContent>
           <Typography
@@ -91,7 +94,7 @@ export default function InfoCard({
             >
               Min
               <LocalFireDepartmentIcon />
-              {points}
+              {minpoints}
             </div>
           </div>
           <div style={{ marginTop: "8px" }}>
@@ -102,22 +105,16 @@ export default function InfoCard({
           {showMore && (
             <div style={{ margin: "5px" }}>
               <div style={{ fontWeight: "600", fontSize: "18px" }}>
-                Product Details
+                Project Tickets
               </div>
               <div>
                 <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
-                  <li style={listItemStyle}>
-                    <span style={bulletStyle}></span>
-                    one
-                  </li>
-                  <li style={listItemStyle}>
-                    <span style={bulletStyle}></span>
-                    two
-                  </li>
-                  <li style={listItemStyle}>
-                    <span style={bulletStyle}></span>
-                    three
-                  </li>
+                  {projectTickets.map((ticket, index) => (
+                    <li key={index} style={listItemStyle}>
+                      <span style={bulletStyle}></span>
+                      {ticket}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -178,7 +175,7 @@ export default function InfoCard({
               }}
             >
               <MoneyIcon />
-              {points}
+              {money}
             </div>
 
             <Button size="small" onClick={() => setShowMore(!showMore)}>
@@ -205,7 +202,7 @@ export default function InfoCard({
               Apply
             </Button>
             <Button variant="contained" color="error" style={{ width: "40%" }}>
-              Reject
+              Ignore
             </Button>
           </CardActions>
         )}

@@ -21,7 +21,7 @@ const Home = lazy(() => import("./pages/Home"));
 
 const Projects = lazy(() => import("./pages/Projects"));
 const Cart = lazy(() => import("./pages/Cart"));
-const Product = lazy(() => import("./pages/Product"));
+
 const Signin = lazy(() => import("./components/AuthComponents/Login"));
 const Profile = lazy(() => import("./pages/Profile"));
 const DashBoard = lazy(() => import("./pages/DashBoard/DashBoard"));
@@ -46,17 +46,16 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/test" element={<TestComponent />} />
+
 
           <Route path="/projects" element={<Projects />} />
-          <Route path="/shop/:id" element={<Product />} />
           <Route path="/my-projects" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/listing" element={<Listing />} />
           <Route path="/login" element={<Signin />} />
           <Route path="/DashBoard" element={<DashBoard />} />
-          <Route path="/accepted-projects" element={<AcceptedProjects />} />
 
+          <Route path="/accepted-projects" element={<AcceptedProjects />} />
           <Route path="/ongoing-projects" element={<OngoingProjects />} />
 
           <Route path="/signup" element={<Signup />} />

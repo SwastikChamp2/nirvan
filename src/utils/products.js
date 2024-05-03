@@ -38,28 +38,28 @@ import home4Img from "../Images/home-04.png";
 
 export const SliderData = [
   {
-      id: 1,
-      title: "Best Place to Buy and Sell Books",
-      desc: "Seeling and Buy Used Books have never been simpler than this",
-      cover: home1Img,
+    id: 1,
+    title: "Best Place to Buy and Sell Books",
+    desc: "Seeling and Buy Used Books have never been simpler than this",
+    cover: home1Img,
   },
   {
-      id: 2,
-      title: "Buy Books at Affordable Rates",
-      desc: "Best place to buy budget friendly and affordable books right from the comfort of your home",
-      cover: home2Img,
+    id: 2,
+    title: "Buy Books at Affordable Rates",
+    desc: "Best place to buy budget friendly and affordable books right from the comfort of your home",
+    cover: home2Img,
   },
   {
-      id: 3,
-      title: "Best place to list and sell your old books",
-      desc: "Get rid of your old books and also make money doing that !",
-      cover: home3Img,
+    id: 3,
+    title: "Best place to list and sell your old books",
+    desc: "Get rid of your old books and also make money doing that !",
+    cover: home3Img,
   },
   {
-      id: 4,
-      title: "Massive Discounts on Popular Books",
-      desc: "Get Discounts upto 50% on some of the most popular books",
-      cover: home4Img,
+    id: 4,
+    title: "Massive Discounts on Popular Books",
+    desc: "Get Discounts upto 50% on some of the most popular books",
+    cover: home4Img,
   },
 ];
 
@@ -97,8 +97,8 @@ export const discoutProducts = [
     imgUrl: studyBook01,
     category: "study-books",
     price: 193,
-    opticalPrice: 193 * 1.5, 
-    discount:30,
+    opticalPrice: 193 * 1.5,
+    discount: 30,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -117,8 +117,8 @@ export const discoutProducts = [
     imgUrl: studyBook08,
     category: "study-books",
     price: 253,
-    opticalPrice: 253 * 1.5, 
-    discount:20,
+    opticalPrice: 253 * 1.5,
+    discount: 20,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -141,8 +141,8 @@ export const discoutProducts = [
     imgUrl: notes02,
     category: "notes",
     price: 89,
-    opticalPrice: 89 * 1.5, 
-    discount:15,
+    opticalPrice: 89 * 1.5,
+    discount: 15,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -165,8 +165,8 @@ export const discoutProducts = [
     imgUrl: notes03,
     category: "notes",
     price: 112,
-    opticalPrice: 112 * 1.5, 
-    discount:35,
+    opticalPrice: 112 * 1.5,
+    discount: 35,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -189,8 +189,8 @@ export const discoutProducts = [
     imgUrl: fiction03,
     category: "fiction",
     price: 599,
-    opticalPrice: 599 * 1.5, 
-    discount:10,
+    opticalPrice: 599 * 1.5,
+    discount: 10,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -213,8 +213,8 @@ export const discoutProducts = [
     imgUrl: fiction04,
     category: "fiction",
     price: 799,
-    opticalPrice: 799 * 1.5, 
-    discount:5,
+    opticalPrice: 799 * 1.5,
+    discount: 5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -241,7 +241,7 @@ export const products = [
     imgUrl: studyBook01,
     category: "study-books",
     price: 193,
-    opticalPrice: 193 * 1.5, 
+    opticalPrice: 193 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -261,7 +261,7 @@ export const products = [
     imgUrl: studyBook02,
     category: "study-books",
     price: 253,
-    opticalPrice: 253 * 1.5, 
+    opticalPrice: 253 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -285,7 +285,7 @@ export const products = [
     imgUrl: studyBook03,
     category: "study-books",
     price: 173,
-    opticalPrice: 173 * 1.5, 
+    opticalPrice: 173 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -308,7 +308,7 @@ export const products = [
     imgUrl: studyBook07,
     category: "study-books",
     price: 253,
-    opticalPrice: 253 * 1.5, 
+    opticalPrice: 253 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -331,7 +331,7 @@ export const products = [
     imgUrl: studyBook04,
     category: "study-books",
     price: 163,
-    opticalPrice: 163 * 1.5, 
+    opticalPrice: 163 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -355,7 +355,7 @@ export const products = [
     imgUrl: studyBook05,
     category: "study-books",
     price: 163,
-    opticalPrice: 163 * 1.5, 
+    opticalPrice: 163 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -379,7 +379,7 @@ export const products = [
     imgUrl: studyBook06,
     category: "study-books",
     price: 163,
-    opticalPrice: 163 * 1.5, 
+    opticalPrice: 163 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -402,7 +402,7 @@ export const products = [
     imgUrl: notes01,
     category: "notes",
     price: 99,
-    opticalPrice: 99 * 1.5, 
+    opticalPrice: 99 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -426,7 +426,7 @@ export const products = [
     imgUrl: studyBook07,
     category: "study-books",
     price: 173,
-    opticalPrice: 173 * 1.5, 
+    opticalPrice: 173 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -450,7 +450,7 @@ export const products = [
     imgUrl: notes02,
     category: "notes",
     price: 89,
-    opticalPrice: 89 * 1.5, 
+    opticalPrice: 89 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -474,7 +474,7 @@ export const products = [
     imgUrl: notes03,
     category: "notes",
     price: 112,
-    opticalPrice: 112 * 1.5, 
+    opticalPrice: 112 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -498,7 +498,7 @@ export const products = [
     imgUrl: fiction01,
     category: "fiction",
     price: 799,
-    opticalPrice: 799 * 1.5, 
+    opticalPrice: 799 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -521,7 +521,7 @@ export const products = [
     imgUrl: notes04,
     category: "notes",
     price: 99,
-    opticalPrice: 99 * 1.5, 
+    opticalPrice: 99 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -544,7 +544,7 @@ export const products = [
     imgUrl: fiction02,
     category: "fiction",
     price: 799,
-    opticalPrice: 799 * 1.5, 
+    opticalPrice: 799 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -568,7 +568,7 @@ export const products = [
     imgUrl: fiction03,
     category: "fiction",
     price: 599,
-    opticalPrice: 599 * 1.5, 
+    opticalPrice: 599 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -592,7 +592,7 @@ export const products = [
     imgUrl: fiction04,
     category: "fiction",
     price: 799,
-    opticalPrice: 799 * 1.5, 
+    opticalPrice: 799 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -616,7 +616,7 @@ export const products = [
     imgUrl: fiction05,
     category: "fiction",
     price: 899,
-    opticalPrice: 899 * 1.5, 
+    opticalPrice: 899 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -640,7 +640,7 @@ export const products = [
     imgUrl: fiction06,
     category: "fiction",
     price: 699,
-    opticalPrice: 699 * 1.5, 
+    opticalPrice: 699 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -664,7 +664,7 @@ export const products = [
     imgUrl: comic01,
     category: "comic",
     price: 299,
-    opticalPrice: 299 * 1.5, 
+    opticalPrice: 299 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -688,7 +688,7 @@ export const products = [
     imgUrl: comic02,
     category: "comic",
     price: 299,
-    opticalPrice: 299 * 1.5, 
+    opticalPrice: 299 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -712,7 +712,7 @@ export const products = [
     imgUrl: comic03,
     category: "comic",
     price: 299,
-    opticalPrice: 299 * 1.5, 
+    opticalPrice: 299 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -736,7 +736,7 @@ export const products = [
     imgUrl: comic04,
     category: "comic",
     price: 399,
-    opticalPrice: 399 * 1.5, 
+    opticalPrice: 399 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -760,7 +760,7 @@ export const products = [
     imgUrl: nonFiction01,
     category: "non-fiction",
     price: 199,
-    opticalPrice: 199 * 1.5, 
+    opticalPrice: 199 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -784,7 +784,7 @@ export const products = [
     imgUrl: nonFiction03,
     category: "non-fiction",
     price: 199,
-    opticalPrice: 199 * 1.5, 
+    opticalPrice: 199 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -807,7 +807,7 @@ export const products = [
     imgUrl: nonFiction02,
     category: "non-fiction",
     price: 169,
-    opticalPrice: 169 * 1.5, 
+    opticalPrice: 169 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -830,7 +830,7 @@ export const products = [
     imgUrl: nonFiction04,
     category: "non-fiction",
     price: 139,
-    opticalPrice: 139 * 1.5, 
+    opticalPrice: 139 * 1.5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
