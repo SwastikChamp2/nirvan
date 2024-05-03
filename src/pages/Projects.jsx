@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 
 import { Fragment, useState } from "react";
-import ShopList from "../components/ProjectList";
+import ProjectList from "../components/ProjectList";
 import Banner from "../components/Banner/Banner";
 import useWindowScrollToTop from "../hooks/useWindowScrollToTop";
 
@@ -23,7 +23,7 @@ const Projects = () => {
           </Row>
         </Container>
         <Container>
-          {/* <ShopList productItems={filterList} /> */}
+          <ProjectList />
         </Container>
       </section>
     </Fragment>
