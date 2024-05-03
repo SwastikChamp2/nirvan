@@ -48,7 +48,7 @@ const ProjectList = () => {
               points={project.projectPoints}
               money={project.projectBudget}
               languages={project.techStack}
-              projectTickets={project.projectTickets}
+              projectTickets={project.techStack}
             />
           ))}
         </Row>
